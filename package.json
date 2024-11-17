@@ -4,14 +4,17 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"lint": "eslint"
+		"build": "run-s lint _check _build",
+		"preview": "run-s lint _check _build _preview",
+		"lint": "eslint",
+		"_build": "astro build",
+		"_check": "astro check",
+		"_preview": "astro preview"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.4",
 		"astro": "4.16.12",
+		"npm-run-all2": "7.0.1",
 		"typescript": "5.6.3"
 	},
 	"devDependencies": {
