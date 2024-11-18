@@ -5,6 +5,11 @@
 		}
 	],
 	"settings": {
+		"eslint.validate": [
+			"astro",
+			"typescript",
+			"typescriptreact"
+		],
 		"editor.formatOnSave": false
 	}
 }
