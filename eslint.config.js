@@ -1,8 +1,6 @@
 import eslintPluginAstro from "eslint-plugin-astro";
 import stylistic from "@stylistic/eslint-plugin";
 
-// TODO: Migrate to https://eslint.style/guide/getting-started
-
 export default [
 	...eslintPluginAstro.configs.recommended,
 	{
