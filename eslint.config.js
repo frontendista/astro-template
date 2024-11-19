@@ -4,6 +4,7 @@ import stylistic from "@stylistic/eslint-plugin";
 export default [
 	...eslintPluginAstro.configs.recommended,
 	{
+		files: ["src/**/*.astro", "src/**/*.tsx", "src/**/*.ts"],
 		plugins: {
 			"@stylistic": stylistic
 		},
