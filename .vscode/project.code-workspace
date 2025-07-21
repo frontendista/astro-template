@@ -5,11 +5,15 @@
 		}
 	],
 	"settings": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		},
 		"eslint.validate": [
-			"astro",
+			"javascript",
+			"javascriptreact",
 			"typescript",
-			"typescriptreact"
-		],
-		"editor.formatOnSave": false
+			"typescriptreact",
+			"astro"
+		]
 	}
 }

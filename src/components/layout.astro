@@ -1,0 +1,27 @@
+---
+import "@/styles/global.scss";
+import "@/styles/tailwind.css";
+
+import * as m from "@/paraglide/messages";
+import { overwriteGetLocale } from "@/paraglide/runtime";
+import { locales, type SupportedLocales } from "config";
+
+const locale = Astro.currentLocale as SupportedLocales;
+
+if (!locales.includes(locale)) {
+	throw new Error(`Locale ${locale} is not supported.`);
+}
+
+overwriteGetLocale(() => locale);
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<slot name="head" />
+	</head>
+	<body>
+		<span>Test: {m.test()}</span>
+		<slot />
+	</body>
+</html>
