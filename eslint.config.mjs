@@ -1,20 +1,28 @@
-import eslintPluginAstro from "eslint-plugin-astro";
+import eslint from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import astro from "eslint-plugin-astro";
+import { defineConfig, globalIgnores } from "eslint/config";
+import typescript from "typescript-eslint";
 
-export default [
-	...eslintPluginAstro.configs["jsx-a11y-recommended"],
-	stylistic.configs.customize({
-		flat: true,
-		indent: "tab",
-		quotes: "double",
-		semi: true,
-		jsx: true,
-		arrowParens: false,
-		commaDangle: "never"
-	}),
+const style = stylistic.configs.customize({
+	flat: true,
+	indent: "tab",
+	quotes: "double",
+	semi: true,
+	jsx: true,
+	arrowParens: false,
+	commaDangle: "never"
+});
+
+export default defineConfig([
+	globalIgnores(["**/paraglide/*"]),
+	style,
+	eslint.configs.recommended,
+	...typescript.configs.recommended,
+	...astro.configs["jsx-a11y-recommended"],
 	{
 		rules: {
 			"@stylistic/jsx-one-expression-per-line": "off"
 		}
 	}
-];
+]);
