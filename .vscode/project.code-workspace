@@ -6,7 +6,9 @@
 	],
 	"settings": {
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": "always"
+			"source.organizeImports": "always",
+			"source.fixAll.eslint": "always",
+			"source.fixAll.stylelint": "always"
 		},
 		"eslint.validate": [
 			"javascript",
@@ -14,6 +16,8 @@
 			"typescript",
 			"typescriptreact",
 			"astro"
-		]
+		],
+		"css.validate": false,
+		"scss.validate": false
 	}
 }
